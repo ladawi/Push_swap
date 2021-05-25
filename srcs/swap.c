@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 13:00:42 by ladawi            #+#    #+#             */
-/*   Updated: 2021/05/24 14:08:46 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/05/25 14:12:16 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int		swap_a(t_data *data)
 		n = data->list_a[0];
 		data->list_a[0] = data->list_a[1];
 		data->list_a[1] = n;
+		data->count++;
 	}
 	return (0);
 }
@@ -34,6 +35,7 @@ int		swap_b(t_data *data)
 		n = data->list_b[0];
 		data->list_a[0] = data->list_b[1];
 		data->list_b[1] = n;
+		data->count++;
 	}
 	return (0);
 }

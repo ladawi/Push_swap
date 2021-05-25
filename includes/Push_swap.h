@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:45:17 by ladawi            #+#    #+#             */
-/*   Updated: 2021/05/24 15:21:28 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/05/25 16:27:09 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,13 @@ typedef struct	s_data
 	size_t	lenght_list_a;
 	int		*list_b;
 	size_t	lenght_list_b;
+	int		count;
+	
 }				t_data;
 
 int			get_list(int ac, char **av, t_data *data);
 int			check(int ac, char **av);
+int			check_double(t_data *data, int index);
 int			swap_a(t_data *data);
 int			swap_b(t_data *data);
 int			swap_ss(t_data *data);
@@ -36,7 +39,7 @@ int			rotate_rr(t_data *data);
 int			push_a(t_data *data);
 int			push_b(t_data *data);
 int			rev_rotate_a(t_data *data);
-int			simple_sort(t_data *data);
+void		quick_sort(t_data *data, int first, int last);
 
 
 
