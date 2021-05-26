@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 13:48:37 by ladawi            #+#    #+#             */
-/*   Updated: 2021/05/25 16:41:46 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/05/26 08:54:42 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int			check(int ac, char **av)
 				return (-1);
 			x++;
 		}
-		if (x > 10)
+		if (x > 11)
 			return(-1);
 		x = 0;
 	}
@@ -54,10 +54,12 @@ int			check_double(t_data *data, int index)
 	return(check_double(data, index + 1));
 }
 
-int			is_int(t_data *data)
+int			is_int(t_data *data, long int nb)
 {
 	int		i;
 
 	i = 0;
+	if (nb > 2147483647 || nb < -2147483647)
+		return (-1);
 	return (0);
 }

@@ -1,16 +1,90 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   quick_sort.c                                       :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 15:21:05 by ladawi            #+#    #+#             */
-/*   Updated: 2021/05/25 16:45:22 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/05/26 14:20:27 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
+
+
+void			set_max(t_data *data)
+{
+	int		max;
+
+	max = 0;
+	max = get_max(data);
+	while (data->list_a[data->lenght_list_a - 1] != max)
+	{
+		if (data->index_max > (size_t)(data->lenght_list_a / 2))
+			rev_rotate_a(data);
+		else
+			rotate_a(data);
+	}
+}
+
+void			simple_sort(t_data *data)
+{
+	int		i;
+	int		x;
+
+	i = 0;
+	// set_max(data);
+	if (data->list_a[0] > data->list_a[1])
+		swap_a(data);
+	if (data->lenght_list_a > 3)
+	{
+		while (i <= data->lenght_list_a)
+		{
+			if (data->list_a[0] > data->mediane)
+				push_b(data);
+			else
+			{
+				rotate_a(data);
+			}
+			i++;
+		}
+		i = 0;
+	}
+	while (data->list_a[data->lenght_list_a - 1] != get_max(data))
+	{
+		rotate_a(data);
+	}
+	while (i < data->lenght_list_a - 1)
+	{
+		if (data->list_a[i] >= data->list_a[i + 1])
+		{
+			x = i;
+			while (x > 0)
+			{
+				rotate_a(data);
+				x--;
+			}
+			swap_a(data);
+			while (x++ < i)
+			{
+				rev_rotate_a(data);
+			}
+			i = 0;
+			// i = -1;
+			// while (++i < data->lenght_list_a)
+			// 	printf("[%d]", data->list_a[i]);
+			// printf("\n");
+			// i = 0;
+		}
+		else
+			i++;
+	}
+	while (data->lenght_list_b)
+	{
+		push_a(data);
+	}
+}
 
 void			swap(t_data *data, int x, int y)
 {
@@ -49,14 +123,11 @@ void			swap(t_data *data, int x, int y)
 	}
 }
 
-
-
 void			quick_sort(t_data *data, int first, int last)
 {
 	int		i;
 	int		j;
 	int		pivot;
-
 
 	if (first < last)
 	{
@@ -78,4 +149,16 @@ void			quick_sort(t_data *data, int first, int last)
 		quick_sort(data, j + 1, last);
 		quick_sort(data, first, j - 1);
 	}
+}
+
+
+void		sort(t_data *data, int ac)
+{
+	if (ac > 10)
+	{
+		quick_sort(data, 0, data->lenght_list_a - 1);
+		printf("__ QUICK SORT __\n");
+	}
+	else
+		simple_sort(data);
 }

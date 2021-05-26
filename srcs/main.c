@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:47:39 by ladawi            #+#    #+#             */
-/*   Updated: 2021/05/25 16:40:17 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/05/26 13:52:34 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int			main(int ac, char **av)
 	t_data		data;
 
 	data.count = 0;
+	data.index_max = 0;
+	data.mediane = 0;
 	if (check(ac, av))
 	{
 		ft_putendl_fd("Error 1", 0);
@@ -32,7 +34,9 @@ int			main(int ac, char **av)
 		ft_putendl_fd("Error 3", 0);
 		return(-1);
 	}
-	quick_sort(&data, 0, data.lenght_list_a - 1);
+	get_midiane(&data);
+	printf("MEDIANE = %d\n", data.mediane);
+	sort(&data, ac);
 	printf("### %d ###\n", data.count);
 	int i = -1;
 	while (++i < data.lenght_list_a)

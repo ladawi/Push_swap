@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 13:00:42 by ladawi            #+#    #+#             */
-/*   Updated: 2021/05/25 14:12:16 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/05/26 10:43:42 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@ int		swap_a(t_data *data)
 {
 	int		n;
 
-	if (data->lenght_list_a > 2)
+	if (data->lenght_list_a > 1)
 	{
 		n = data->list_a[0];
 		data->list_a[0] = data->list_a[1];
 		data->list_a[1] = n;
 		data->count++;
+		ft_putendl_fd("sa", 0);
 	}
 	return (0);
 }
@@ -30,12 +31,13 @@ int		swap_b(t_data *data)
 {
 	int		n;
 
-	if (data->lenght_list_b > 2)
+	if (data->lenght_list_b > 1)
 	{
 		n = data->list_b[0];
 		data->list_a[0] = data->list_b[1];
 		data->list_b[1] = n;
 		data->count++;
+		ft_putendl_fd("sb", 0);
 	}
 	return (0);
 }
