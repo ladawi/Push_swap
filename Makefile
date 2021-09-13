@@ -6,7 +6,7 @@
 #    By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/24 10:40:04 by ladawi            #+#    #+#              #
-#    Updated: 2021/09/12 17:46:50 by ladawi           ###   ########.fr        #
+#    Updated: 2021/09/13 14:16:26 by ladawi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,15 @@ SRC_LIST=\
 	push.c\
 	rev_rotate.c\
 	sort.c\
+
+
+RED = \033[0;91m
+YEL = \033[93m
+END = \033[0m
+GRE = \033[0;92m
+PUR = \033[0;95m
+BLU = \033[0;34m
+BOLD = \033[1m
 
 SRCO = $(addprefix $(OBJ_DIR)/, $(SRC_LIST:%.c= %.o))
 
