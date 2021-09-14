@@ -6,22 +6,32 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 11:04:26 by ladawi            #+#    #+#             */
-/*   Updated: 2021/09/13 14:52:13 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/09/14 17:26:29 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
 
-t_chain 	*add_maillon(t_chain *prev, int nb)
+t_chain		*get_last(t_chain *node)
+{
+	if (node->next == NULL)
+		return (node);
+	return (get_last(node->next));
+}
+
+t_chain 	*add_maillon(t_chain *head, int nb)
 {
 	t_chain *new;
-
-	new = ft_calloc(sizeof(t_chain), 1);
-	new->nb = nb;
-	new->prev = prev;
-	new->next = 0;
-	if (prev != NULL)
-		prev->next = new;
+	
+	if (head->next == NULL)
+	{
+		new = ft_calloc(sizeof(t_chain), 1);
+		new->nb = nb;
+		new->next = 0;
+		head->next = new;
+	}
+	else
+		add_maillon(head->next, nb);
 	return (new);
 }
 
@@ -41,14 +51,20 @@ int		get_list(t_push_swap *push_swap, int len, char **av)
 	int	x;
 	int	nb;
 
-	i = -1;
+	i = 0;
 	x = 0;
+	nb = ft_atoi(av[i + 1]);
+	if ((is_int(nb)))
+		return (-1);
+ 	push_swap->list_a->nb = nb;
+ 	push_swap->list_a->next = 0;
+	push_swap->tab_nb[i] = nb;
 	while (++i < len)
 	{
 		nb = ft_atoi(av[i + 1]);
 		if ((is_int(nb)))
 			return (-1);
-		push_swap->list_a = add_maillon(push_swap->list_a, nb);
+ 		add_maillon(push_swap->list_a, nb);
 		push_swap->tab_nb[i] = nb;
 	}
 	return(0);

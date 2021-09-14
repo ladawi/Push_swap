@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 14:13:51 by ladawi            #+#    #+#             */
-/*   Updated: 2021/09/13 15:33:56 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/09/14 16:15:21 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 void	rotate_a(t_push_swap *push_swap)
 {
-	void	*buff;
+	t_chain	*tmp;
+	t_chain	*buff;
 
-	push_swap->list_a->next = push_swap->list_a_tail;
-	push_swap->list_a->prev->next = NULL;
-	push_swap->list_a_tail->prev = push_swap->list_a;
-	buff = push_swap->list_a->prev;
-	push_swap->list_a->prev = NULL;
+	tmp = push_swap->list_a;
+	while (tmp->next->next != NULL)
+		tmp = tmp->next;
+	buff = tmp->next;
+	tmp->next = NULL;
+	buff->next = push_swap->list_a;
 	push_swap->list_a = buff;
-	push_swap->list_a_tail = set_list_tail(push_swap, push_swap->list_a);
 	return ;
 }
