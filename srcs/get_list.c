@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 11:04:26 by ladawi            #+#    #+#             */
-/*   Updated: 2021/05/26 14:18:06 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/08 14:13:51 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		get_max(t_data *data)
 	return (nb);
 }
 
-void	mini_sort(t_data *data, int	*tab)
+void	sort_medianne(t_data *data, int	*tab)
 {
 	int		i;
 	int		buff;
@@ -81,14 +81,14 @@ int		get_midiane(t_data *data)
 	i = -1;
 	while (++i < data->lenght_list_a)
 		tab[i] = data->list_a[i];
-	mini_sort(data, tab);
+	sort_medianne(data, tab);
 	i = 0;
 	while (i < (int)(data->lenght_list_a / 2))
 		i++;
 	data->mediane = tab[i];
-	int	x = -1;
-	while (++x < data->lenght_list_a)
-		printf("tab[%d] = %d\n", x, tab[x]);
-	printf("MEDIANE = %d\n", data->mediane);
+	// int	x = -1;
+	// while (++x < data->lenght_list_a)
+	// 	printf("tab[%d] = %d\n", x, tab[x]);
+	// printf("MEDIANE = %d\n", data->mediane);
 	return (0);
 }

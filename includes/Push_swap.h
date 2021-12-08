@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:45:17 by ladawi            #+#    #+#             */
-/*   Updated: 2021/05/26 13:15:55 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/08 15:05:58 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,15 @@ int			swap_ss(t_data *data);
 int			rotate_a(t_data *data);
 int			rotate_b(t_data *data);
 int			rotate_rr(t_data *data);
+int			rev_rotate_rr(t_data *data);
 int			push_a(t_data *data);
 int			push_b(t_data *data);
 int			rev_rotate_a(t_data *data);
+int			rev_rotate_b(t_data *data);
+void		exec_stack(t_data *data, char *str);
 void		sort(t_data *data, int ac);
 void		quick_sort(t_data *data, int first, int last);
-void		simple_sort(t_data *data);
+void		selec_sort(t_data *data);
 int			is_int(t_data *data, long int nb);
 int			get_max(t_data *data);
 

@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 14:10:00 by ladawi            #+#    #+#             */
-/*   Updated: 2021/05/26 14:19:40 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/08 16:16:16 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ int			push_a(t_data *data)
 		rotate_b(data);
 		data->lenght_list_a++;
 		data->lenght_list_b--;
-		data->count++;
-		ft_putendl_fd("pa", 0);
+		rev_rotate_a(data);
 	}
 	return (0);
 }
@@ -42,8 +41,7 @@ int			push_b(t_data *data)
 		rotate_a(data);
 		data->lenght_list_b++;
 		data->lenght_list_a--;
-		data->count++;
-		ft_putendl_fd("pb", 0);
+		rev_rotate_b(data);
 	}
 	return (0);
 }

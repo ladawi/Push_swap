@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 15:21:05 by ladawi            #+#    #+#             */
-/*   Updated: 2021/05/26 14:20:27 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/08 16:49:50 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,62 +28,75 @@ void			set_max(t_data *data)
 	}
 }
 
-void			simple_sort(t_data *data)
+int	find_min(t_data *data)
+{
+	int	i;
+	int	pos_min;
+	int	min;
+
+	i = 0;
+	pos_min = 0;
+	min = data->list_a[0];
+	while (i < data->lenght_list_a)
+	{
+		if (min > data->list_a[i])
+		{
+			pos_min = i;
+			min = data->list_a[i];
+		}
+		i++;
+	}
+	return (pos_min);
+}
+
+int	find_max(t_data *data)
+{
+	int	i;
+	int	pos_max;
+	int	max;
+
+	i = 0;
+	pos_max = 0;
+	max = data->list_a[0];
+	while (i < data->lenght_list_a)
+	{
+		if (max < data->list_a[i])
+		{
+			pos_max = i;
+			max = data->list_a[i];
+		}
+		i++;
+	}
+	return (pos_max);
+}
+
+void	send_min(t_data *data, int rotate_num)
+{
+	int	i;
+
+	i = 0;
+	while (rotate_num-- > 0)
+	{
+		rotate_a(data);
+	}
+	push_b(data);
+}
+
+void			selec_sort(t_data *data)
 {
 	int		i;
 	int		x;
 
 	i = 0;
-	// set_max(data);
-	if (data->list_a[0] > data->list_a[1])
-		swap_a(data);
-	if (data->lenght_list_a > 3)
+	while (data->lenght_list_a > 1)
 	{
-		while (i <= data->lenght_list_a)
-		{
-			if (data->list_a[0] > data->mediane)
-				push_b(data);
-			else
-			{
-				rotate_a(data);
-			}
-			i++;
-		}
-		i = 0;
+		x = find_min(data);
+		send_min(data, x);
+		i++;
 	}
-	while (data->list_a[data->lenght_list_a - 1] != get_max(data))
-	{
-		rotate_a(data);
-	}
-	while (i < data->lenght_list_a - 1)
-	{
-		if (data->list_a[i] >= data->list_a[i + 1])
-		{
-			x = i;
-			while (x > 0)
-			{
-				rotate_a(data);
-				x--;
-			}
-			swap_a(data);
-			while (x++ < i)
-			{
-				rev_rotate_a(data);
-			}
-			i = 0;
-			// i = -1;
-			// while (++i < data->lenght_list_a)
-			// 	printf("[%d]", data->list_a[i]);
-			// printf("\n");
-			// i = 0;
-		}
-		else
-			i++;
-	}
-	while (data->lenght_list_b)
-	{
+	while (i-- > 0)
 		push_a(data);
-	}
+	rotate_a(data);
 }
 
 void			swap(t_data *data, int x, int y)
@@ -151,14 +164,93 @@ void			quick_sort(t_data *data, int first, int last)
 	}
 }
 
+void	mini_sort(t_data *data)
+{
+	int	pos_max;
+	int	pos_min;
+
+	pos_max = find_max(data);
+	pos_min = find_min(data);
+	if (pos_max == 2 && pos_min == 1)
+		exec_stack(data, "sa");
+	else if (pos_max == 0 && pos_min == 2)
+	{
+		exec_stack(data, "sa");
+		exec_stack(data, "rra");
+	}
+	else if (pos_max == 0 && pos_min == 1)
+		exec_stack(data, "ra");
+	else if (pos_max == 1 && pos_min == 0)
+	{
+		exec_stack(data, "sa");
+		exec_stack(data, "ra");
+	}
+	else if (pos_max == 1 && pos_min == 2)
+		exec_stack(data, "rra");
+}
+
+void	small_sort(t_data *data)
+{
+	int	pos_min;
+
+	exec_stack(data, "pb");
+	// exec_stack(data, "pb");
+	// if (data->list_b[0] > data->list_b[1])
+		// exec_stack(data, "sb");
+	mini_sort(data);
+	// exec_stack(data, "rra");
+	// exec_stack(data, "rra");
+	// while (data->list_a[data->lenght_list_a - 1] > data->list_b[0] && data->list_a[0] < data->list_b[0])
+	// 	exec_stack(data, "ra");
+	// exec_stack(data, "pa");
+	// // pos_min = find_min(data);
+	// while (find_min(data) != 0)
+	// {
+	// 	if (pos_min > (int)(data->lenght_list_a / 2))
+	// 		exec_stack(data, "ra");
+	// 	else
+	// 		exec_stack(data, "rra");
+	// }
+		// exec_stack(data, "rra");
+	// printf("-= min = %d =-\n", find_min(data));
+
+	// if (data->list_b[0] > data->list_a[2])
+	
+}
 
 void		sort(t_data *data, int ac)
 {
-	if (ac > 10)
-	{
-		quick_sort(data, 0, data->lenght_list_a - 1);
-		printf("__ QUICK SORT __\n");
-	}
-	else
-		simple_sort(data);
+	// if (ac > 4)
+	// {
+	// 	quick_sort(data, 0, data->lenght_list_a - 1);
+	// 	printf("__ QUICK SORT __\n");
+	// }
+	// else
+	// {
+		if (ac <= 4)
+		{
+			mini_sort(data);
+		}
+		else if (ac <= 6)
+		{
+			small_sort(data);
+		}
+		else if (ac <= 7)
+		{
+			// small_sort(data);
+			// exec_stack(data, "sa");
+			// exec_stack(data, "pb");
+			// exec_stack(data, "pb");
+			// exec_stack(data, "pb");
+			// exec_stack(data, "rr");
+			// exec_stack(data, "rrr");
+			// exec_stack(data, "sa");
+			// exec_stack(data, "pa");
+			// exec_stack(data, "pa");
+			// exec_stack(data, "pa");
+
+		}
+		// else
+		// 	selec_sort(data);
+	// }
 }

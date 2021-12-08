@@ -1,16 +1,16 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/24 10:40:04 by ladawi            #+#    #+#              #
-#    Updated: 2021/05/26 09:33:24 by ladawi           ###   ########.fr        #
+#    Updated: 2021/12/08 14:45:21 by ladawi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Push_swap
+NAME = push_swap
 
 SRC_LIST=\
 	main.c\
@@ -21,6 +21,7 @@ SRC_LIST=\
 	push.c\
 	rev_rotate.c\
 	sort.c\
+	exec_stack.c\
 
 SRCO = $(addprefix $(OBJ_DIR)/, $(SRC_LIST:%.c= %.o))
 
