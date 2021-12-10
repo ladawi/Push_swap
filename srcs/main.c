@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:47:39 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/08 16:47:55 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/10 18:16:03 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,17 @@ int			main(int ac, char **av)
 		return(-1);
 	}
 	get_midiane(&data);
-	// printf("MEDIANE = %d\n", data.mediane);
 	// printf("data.lenght_list_a = %ld\n", data.lenght_list_a);
 	// printf("__ AC = %d __\n", ac);
-	sort(&data, ac);
-	printf("### %d ###\n", data.count);
-	int i = -1;
-	while (++i < data.lenght_list_a)
-		printf("[%d]\n", data.list_a[i]);
-	i = -1;
-	while (++i < data.lenght_list_b)
-		printf("{%d}\n", data.list_b[i]);
-	printf("[lenght a = %ld][lenght b = %ld]\n", data.lenght_list_a, data.lenght_list_b);
+	sort_pars(&data, ac);
+	// printf("MEDIANE = %d\n", data.mediane);
+	// printf("### %d ###\n", data.count);
+	// int i = -1;
+	// while (++i < data.lenght_list_a)
+	// 	printf("[%d]\n", data.list_a[i]);
+	// i = -1;
+	// while (++i < data.lenght_list_b)
+	// 	printf("{%d}\n", data.list_b[i]);
+	// printf("[lenght a = %ld][lenght b = %ld]\n", data.lenght_list_a, data.lenght_list_b);
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 11:04:26 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/08 14:13:51 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/09 17:57:20 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,13 @@ int		get_max(t_data *data)
 	return (nb);
 }
 
-void	sort_medianne(t_data *data, int	*tab)
+void	sort_medianne(t_data *data, int	*tab, int len)
 {
 	int		i;
 	int		buff;
 
 	i = 0;
-	while (i < data->lenght_list_a - 1)
+	while (i < len)
 	{
 		if (tab[i] > tab[i + 1])
 		{
@@ -81,7 +81,7 @@ int		get_midiane(t_data *data)
 	i = -1;
 	while (++i < data->lenght_list_a)
 		tab[i] = data->list_a[i];
-	sort_medianne(data, tab);
+	sort_medianne(data, tab, data->lenght_list_a - 1);
 	i = 0;
 	while (i < (int)(data->lenght_list_a / 2))
 		i++;
@@ -90,5 +90,33 @@ int		get_midiane(t_data *data)
 	// while (++x < data->lenght_list_a)
 	// 	printf("tab[%d] = %d\n", x, tab[x]);
 	// printf("MEDIANE = %d\n", data->mediane);
+	return (0);
+}
+
+int		get_midiane_n(t_data *data, int start, int end)
+{
+	int		i;
+	int		len;
+	int		*tab;
+
+	len = end - start;
+	if (len < 0)
+		return (-1);
+	tab = ft_calloc(len, sizeof(int));
+	if (tab == 0)
+		return (-1);
+	i = -1;
+	while (++i + start < end)
+		tab[i] = data->list_a[i + start];
+	sort_medianne(data, tab, len - 1);
+	i = 0;
+	while (i < (int)(len / 2))
+		i++;
+	data->mediane = tab[i];
+	// i = -1;
+	// while (++i < len)
+	// 	printf("{%d}\n", tab[i]);
+	// printf("&_ i = %d / tab[i] = %d _&\n", i, tab[i]); 
+	free(tab);
 	return (0);
 }

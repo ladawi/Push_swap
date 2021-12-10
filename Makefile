@@ -6,7 +6,7 @@
 #    By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/24 10:40:04 by ladawi            #+#    #+#              #
-#    Updated: 2021/12/08 14:45:21 by ladawi           ###   ########.fr        #
+#    Updated: 2021/12/10 16:44:43 by ladawi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,9 @@ SRC_LIST=\
 	rev_rotate.c\
 	sort.c\
 	exec_stack.c\
+	utils.c\
+	selec_sort.c\
+	try_quicksort.c\
 
 SRCO = $(addprefix $(OBJ_DIR)/, $(SRC_LIST:%.c= %.o))
 

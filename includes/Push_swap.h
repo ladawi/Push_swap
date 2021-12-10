@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:45:17 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/08 15:05:58 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/10 19:20:59 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,22 @@ typedef struct	s_data
 	int		count;
 	size_t	index_max;
 	int		mediane;
+	int		pivot;
+	int		selec_sort_done;
 }				t_data;
 
 int			get_list(int ac, char **av, t_data *data);
+void		small_sort(t_data *data, int ac);
+void		mini_sort(t_data *data);
+void		insertion_sort(t_data *data);
+int			set_nb_to_first(t_data *data, int nb, int pos_nb, int median);
 int			check(int ac, char **av);
 int			check_double(t_data *data, int index);
 int			get_midiane(t_data *data);
+int			get_midiane_n(t_data *data, int start, int end);
+void		set_pos_list(t_data *data);
+int			find_min(t_data *data);
+int			find_max(t_data *data);
 int			swap_a(t_data *data);
 int			swap_b(t_data *data);
 int			swap_ss(t_data *data);
@@ -44,11 +54,11 @@ int			push_b(t_data *data);
 int			rev_rotate_a(t_data *data);
 int			rev_rotate_b(t_data *data);
 void		exec_stack(t_data *data, char *str);
-void		sort(t_data *data, int ac);
-void		quick_sort(t_data *data, int first, int last);
+void		sort_pars(t_data *data, int ac);
 void		selec_sort(t_data *data);
 int			is_int(t_data *data, long int nb);
 int			get_max(t_data *data);
+void		try_quicksort(t_data *data, int start, int end, int depth);
 
 
-#endif	
+#endif
