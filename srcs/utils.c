@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:00:20 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/09 14:01:49 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/11 14:02:57 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,40 @@ int	find_max(t_data *data)
 		i++;
 	}
 	return (pos_max);
+}
+
+int	set_nb_to_first_a(t_data *data, int nb, int pos_nb, int median)
+{
+	int c;
+
+	c = 0;
+	while (data->list_a[0] != nb)
+	{
+		c++;
+		if (pos_nb < median)
+			exec_stack(data, "ra");
+		else
+			exec_stack(data, "rra");
+	}
+	if (pos_nb < median)
+		c = -c;
+	return (c);
+}
+
+int	set_nb_to_first_b(t_data *data, int nb, int pos_nb, int median)
+{
+	int c;
+
+	c = 0;
+	while (data->list_b[0] != nb)
+	{
+		c++;
+		if (pos_nb < median)
+			exec_stack(data, "rb");
+		else
+			exec_stack(data, "rrb");
+	}
+	if (pos_nb < median)
+		c = -c;
+	return (c);
 }

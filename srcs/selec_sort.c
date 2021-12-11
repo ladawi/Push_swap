@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:07:27 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/10 19:20:58 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/11 14:04:27 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void			insertion_sort(t_data *data)
 	mid = data->list_a[(int)(data->lenght_list_a/2)];
 	x = find_min(data);
 	min = data->list_a[x];
-	set_nb_to_first(data, data->list_a[x], x, (data->lenght_list_a / 2));
+	set_nb_to_first_a(data, data->list_a[x], x, (data->lenght_list_a / 2));
 	exec_stack(data, "pb");
 	x = find_max(data);
-	set_nb_to_first(data, data->list_a[x], x, (data->lenght_list_a / 2));
+	set_nb_to_first_a(data, data->list_a[x], x, (data->lenght_list_a / 2));
 	exec_stack(data, "pb");
 	while(data->lenght_list_a > 0)
 	{
@@ -58,7 +58,7 @@ void			selec_sort(t_data *data)
 	while (data->lenght_list_a > 1)
 	{
 		x = find_min(data);
-		set_nb_to_first(data, data->list_a[x], x, (data->lenght_list_a / 2));
+		set_nb_to_first_a(data, data->list_a[x], x, (data->lenght_list_a / 2));
 		exec_stack(data, "pb");
 		i++;
 	}

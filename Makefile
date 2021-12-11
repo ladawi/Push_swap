@@ -6,7 +6,7 @@
 #    By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/24 10:40:04 by ladawi            #+#    #+#              #
-#    Updated: 2021/12/10 16:44:43 by ladawi           ###   ########.fr        #
+#    Updated: 2021/12/11 17:57:03 by ladawi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRC_LIST=\
 	utils.c\
 	selec_sort.c\
 	try_quicksort.c\
+	big_sort.c\
 
 SRCO = $(addprefix $(OBJ_DIR)/, $(SRC_LIST:%.c= %.o))
 
@@ -44,7 +45,7 @@ SRC_DIR = srcs
 OBJ_DIR = objs
 
 # FLAGS = -Wall -Werror -Wextra
-FLAGS =
+# FLAGS = -g3 -fsanitize=address
 
 END = \033[0m
 RED = \033[0;91m

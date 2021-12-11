@@ -6,11 +6,24 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:47:39 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/10 18:16:03 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/11 19:15:25 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
+
+void	print_list(t_data *data)
+{
+	printf("---\n");
+	int i = -1;
+	while (++i < data->lenght_list_a)
+		printf("[%d]\n", data->list_a[i]);
+	i = -1;
+	printf("-\n");
+	while (++i < data->lenght_list_b)
+		printf("{%d}\n", data->list_b[i]);
+	printf("---\n");
+}
 
 int			main(int ac, char **av)
 {
@@ -38,6 +51,7 @@ int			main(int ac, char **av)
 	// printf("data.lenght_list_a = %ld\n", data.lenght_list_a);
 	// printf("__ AC = %d __\n", ac);
 	sort_pars(&data, ac);
+	// print_list(&data);
 	// printf("MEDIANE = %d\n", data.mediane);
 	// printf("### %d ###\n", data.count);
 	// int i = -1;

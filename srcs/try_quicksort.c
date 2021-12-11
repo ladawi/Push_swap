@@ -6,40 +6,41 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 16:07:20 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/10 19:10:20 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/11 17:28:33 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
 
-int		ft_find(t_data *data, int nb)
+int		ft_find(t_data *data, int nb, char list)
 {
 	int	i;
 
 	i = -1;
-	while (++i < data->lenght_list_a)
+	if (list == 'a')
 	{
-		if (data->list_a[i] == nb)
-			return (i);
+		while (++i < data->lenght_list_a)
+		{
+			if (data->list_a[i] == nb)
+				return (i);
+		}
 	}
-}
-
-int	set_nb_to_first(t_data *data, int nb, int pos_nb, int median)
-{
-	int c;
-
-	c = 0;
-	while (data->list_a[0] != nb)
+	else if (list == 'b')
 	{
-		c++;
-		if (pos_nb < median)
-			exec_stack(data, "ra");
-		else
-			exec_stack(data, "rra");
+		while (++i < data->lenght_list_b)
+		{
+			if (data->list_b[i] == nb)
+				return (i);
+		}
 	}
-	if (pos_nb < median)
-		c = -c;
-	return (c);
+	else if (list == 's')
+	{
+		while (++i < data->lenght_list_simu)
+		{
+			if (data->list_simu[i] == nb)
+				return (i);
+		}
+	}
 }
 
 void	go_checkpoint(t_data *data, int nb)
@@ -72,9 +73,9 @@ void	ft_swap(t_data *data, int i, int j, int median)
 	nbtwo = data->list_a[j];
 	// printf("__ %d __ %d ___\n", nbone, nbtwo);
 	nb_ini = data->list_a[0];
-	nb_ini = set_nb_to_first(data, nbone, i, median);
+	nb_ini = set_nb_to_first_a(data, nbone, i, median);
 	exec_stack(data, "pb");
-	tmp = set_nb_to_first(data, nbtwo, ft_find(data, nbtwo), median);
+	tmp = set_nb_to_first_a(data, nbtwo, ft_find(data, nbtwo, 'a'), median);
 	exec_stack(data, "pb");
 	exec_stack(data, "sb");
 	exec_stack(data, "pa");

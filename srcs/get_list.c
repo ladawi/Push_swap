@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 11:04:26 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/09 17:57:20 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/11 16:56:22 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int		get_list(int ac, char **av, t_data *data)
 		return (-1);
 	if (!(data->list_b = ft_calloc(ac, sizeof(int))))
 		return (-1);
+	if (!(data->list_simu = ft_calloc(ac, sizeof(int))))
+		return (-1);
 	while (++i < ac)
 	{
 		nb = ft_atoi(av[i + 1]);
@@ -31,6 +33,7 @@ int		get_list(int ac, char **av, t_data *data)
 	}
 	data->lenght_list_a = ac;
 	data->lenght_list_b = 0;
+	data->lenght_list_simu = 0;
 	return (0);
 }
 

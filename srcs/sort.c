@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 15:21:05 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/10 19:22:15 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/11 14:37:13 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,18 +96,19 @@ void		sort_pars(t_data *data, int ac)
 	{
 		small_sort(data, ac);
 	}
-	else if (ac <= 90)
-	{
-		selec_sort(data);
-		// insertion_sort(data);
-	}
+	// else if (ac <= 90)
+	// {
+	// 	selec_sort(data);
+	// 	// insertion_sort(data);
+	// }
 	else
 		{
+			big_sort(data);
 		// selec_sort(data);
 			// try_quicksort(data, 0, data->lenght_list_a);
 			// get_midiane_n(data, 0, data->lenght_list_a);
 			// printf("\033[93mMEDIANE = %d\033[0m\n", data->mediane);
-			try_quicksort(data, 0, data->lenght_list_a - 1, 0);
+			// try_quicksort(data, 0, data->lenght_list_a - 1, 0);
 			// exec_stack(data, "ra");
 		}
 		// swap(data, 0, 4);
