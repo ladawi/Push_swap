@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:45:17 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/11 21:51:39 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/14 14:14:13 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct	s_data
 	int		selec_sort_done;
 	int		last_min_move;
 	int		find_nb_best_move;
+	int		best_nb_pos[2];
 }				t_data;
 
 void		print_list(t_data *data);
@@ -39,7 +40,7 @@ int			get_list(int ac, char **av, t_data *data);
 void		small_sort(t_data *data, int ac);
 void		mini_sort(t_data *data);
 void		big_sort(t_data *data);
-int			find_best_insert(t_data *data, int *tab, int len_tab, int depth);
+void		print_simu(t_data *data);
 void		insertion_sort(t_data *data);
 int			set_nb_to_first_a(t_data *data, int nb, int pos_nb, int median);
 int			set_nb_to_first_b(t_data *data, int nb, int pos_nb, int median);

@@ -6,42 +6,11 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 16:07:20 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/11 17:28:33 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/14 14:40:57 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
-
-int		ft_find(t_data *data, int nb, char list)
-{
-	int	i;
-
-	i = -1;
-	if (list == 'a')
-	{
-		while (++i < data->lenght_list_a)
-		{
-			if (data->list_a[i] == nb)
-				return (i);
-		}
-	}
-	else if (list == 'b')
-	{
-		while (++i < data->lenght_list_b)
-		{
-			if (data->list_b[i] == nb)
-				return (i);
-		}
-	}
-	else if (list == 's')
-	{
-		while (++i < data->lenght_list_simu)
-		{
-			if (data->list_simu[i] == nb)
-				return (i);
-		}
-	}
-}
 
 void	go_checkpoint(t_data *data, int nb)
 {

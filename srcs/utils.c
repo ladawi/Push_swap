@@ -6,11 +6,44 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:00:20 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/11 14:02:57 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/14 15:23:04 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
+
+int		ft_find(t_data *data, int nb, char list)
+{
+	int	i;
+
+	i = -1;
+	if (list == 'a')
+	{
+		while (++i < data->lenght_list_a)
+		{
+			if (data->list_a[i] == nb)
+				return (i);
+		}
+	}
+	else if (list == 'b')
+	{
+		while (++i < data->lenght_list_b)
+		{
+			if (data->list_b[i] == nb)
+				return (i);
+		}
+	}
+	else if (list == 's')
+	{
+		while (++i < data->lenght_list_simu)
+		{
+			if (data->list_simu[i] == nb)
+				return (i);
+		}
+	}
+		// printf("\033[0;91m KEKEKEKEKEKEKEK\033[0m\n");
+	return (-1);
+}
 
 int	find_min(t_data *data)
 {
@@ -72,7 +105,7 @@ int	set_nb_to_first_a(t_data *data, int nb, int pos_nb, int median)
 	return (c);
 }
 
-int	set_nb_to_first_b(t_data *data, int nb, int pos_nb, int median)
+int	set_nb_to_first_b(t_data *data, int nb, int pos_nb, int pos_median)
 {
 	int c;
 
@@ -80,12 +113,12 @@ int	set_nb_to_first_b(t_data *data, int nb, int pos_nb, int median)
 	while (data->list_b[0] != nb)
 	{
 		c++;
-		if (pos_nb < median)
+		if (pos_nb <= pos_median)
 			exec_stack(data, "rb");
 		else
 			exec_stack(data, "rrb");
 	}
-	if (pos_nb < median)
+	if (pos_nb < pos_median)
 		c = -c;
 	return (c);
 }
