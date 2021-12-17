@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 16:07:20 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/14 14:40:57 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/17 22:10:22 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,15 @@ void	go_checkpoint(t_data *data, int nb)
 
 void	ft_swap(t_data *data, int i, int j, int median)
 {
-	int nbone;
+	int	nbone;
 	int	nbtwo;
-	int tmp;
+	int	tmp;
 	int	nb_ini;
 
 	if (i < 0 || j > data->lenght_list_a)
-		return;
+		return ;
 	nbone = data->list_a[i];
 	nbtwo = data->list_a[j];
-	// printf("__ %d __ %d ___\n", nbone, nbtwo);
 	nb_ini = data->list_a[0];
 	nb_ini = set_nb_to_first_a(data, nbone, i, median);
 	exec_stack(data, "pb");
@@ -51,11 +50,9 @@ void	ft_swap(t_data *data, int i, int j, int median)
 	go_checkpoint(data, tmp);
 	exec_stack(data, "pa");
 	go_checkpoint(data, nb_ini);
-	// set_nb_to_first(data, nb_ini, ft_find(data, nb_ini), median);
 }
-	// printf("median = %d, tmp = %d\n", median, tmp);
 
-int		partition(t_data *data, int start, int end, int *tab)
+int	partition(t_data *data, int start, int end, int *tab)
 {
 	int		p;
 	int		j;
@@ -82,44 +79,18 @@ int		partition(t_data *data, int start, int end, int *tab)
 			return (j);
 		ft_swap(data, i, j, mid);
 	}
-	// return (i);
 }
 
 void	try_quicksort(t_data *data, int start, int end, int depth)
 {
 	int	i;
-	int pivot;
+	int	pivot;
 
 	depth++;
-
-
-	// i = 0;
-	// if (start < 0 || start >= end)
-	// 	return ;
-	// pivot = 0;
-	// get_midiane_n(data, start, end);
-	// printf("__[%d]__\n", data->mediane);
-	// getchar();
-	// i = -1;
-	// while (++i < data->lenght_list_a)
-	// 	printf("[%d]\n", data->list_a[i]);
 	if (start >= 0 && end >= 0 && start < end)
 	{
-		// if (end - start <= 90)
-		// {
-		// 	// if (data->selec_sort_done == 0)
-		// 	// {
-		// 		selec_sort(data);
-		// 	// 	data->selec_sort_done == 1;
-		// 	// }
-		// }
-		// else
-		// {
-			pivot = partition(data, start, end, data->list_a);
-			try_quicksort(data, start, pivot, depth);
-			try_quicksort(data, pivot + 1, end, depth);
-		// }
+		pivot = partition(data, start, end, data->list_a);
+		try_quicksort(data, start, pivot, depth);
+		try_quicksort(data, pivot + 1, end, depth);
 	}
-
-	// printf("\033[0;91m___ pivot = %d ___ end = %d __ start = %d ___ | depth = %d.\033[0m\n", pivot, end, start, depth);
 }

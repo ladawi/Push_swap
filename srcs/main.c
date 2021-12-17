@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:47:39 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/14 15:37:10 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/17 18:12:19 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int			main(int ac, char **av)
 	sort_pars(&data, ac);
 	// print_list(&data);
 	// printf("MEDIANE = %d\n", data.mediane);
-	printf("### %d ###\n", data.count);
+	// printf("### %d ###\n", data.count);
 	// int i = -1;
 	// while (++i < data.lenght_list_a)
 	// 	printf("[%d]\n", data.list_a[i]);

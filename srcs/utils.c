@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:00:20 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/14 15:23:04 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/17 20:24:47 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		ft_find(t_data *data, int nb, char list)
 	return (-1);
 }
 
-int	find_min(t_data *data)
+int	find_min_a(t_data *data)
 {
 	int	i;
 	int	pos_min;
@@ -66,7 +66,28 @@ int	find_min(t_data *data)
 	return (pos_min);
 }
 
-int	find_max(t_data *data)
+int	find_min_b(t_data *data)
+{
+	int	i;
+	int	pos_min;
+	int	min;
+
+	i = 0;
+	pos_min = 0;
+	min = data->list_b[0];
+	while (i < data->lenght_list_b)
+	{
+		if (min >= data->list_b[i])
+		{
+			pos_min = i;
+			min = data->list_b[i];
+		}
+		i++;
+	}
+	return(pos_min);
+}
+
+int	find_max_a(t_data *data)
 {
 	int	i;
 	int	pos_max;
@@ -81,6 +102,27 @@ int	find_max(t_data *data)
 		{
 			pos_max = i;
 			max = data->list_a[i];
+		}
+		i++;
+	}
+	return (pos_max);
+}
+
+int	find_max_b(t_data *data)
+{
+	int	i;
+	int	pos_max;
+	int	max;
+
+	i = 0;
+	pos_max = 0;
+	max = data->list_b[0];
+	while (i < data->lenght_list_b)
+	{
+		if (max <= data->list_b[i])
+		{
+			pos_max = i;
+			max = data->list_b[i];
 		}
 		i++;
 	}
