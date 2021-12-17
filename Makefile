@@ -6,7 +6,7 @@
 #    By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/24 10:40:04 by ladawi            #+#    #+#              #
-#    Updated: 2021/12/17 22:37:09 by ladawi           ###   ########.fr        #
+#    Updated: 2021/12/17 22:55:33 by ladawi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,6 @@ SRC_LIST=\
 	exec_stack.c\
 	find_nb.c\
 	utils.c\
-	selec_sort.c\
 	try_quicksort.c\
 	big_sort_utils.c\
 	big_sort_simu_func.c\
@@ -47,7 +46,7 @@ SRC_DIR = srcs
 
 OBJ_DIR = objs
 
-# FLAGS = -Wall -Werror -Wextra 
+FLAGS = -Wall -Werror -Wextra
 # FLAGS = -g3 -fsanitize=address
 
 END = \033[0m
@@ -87,7 +86,7 @@ re: fclean all
 
 fclean: clean
 	@make fclean -C libft
-	@echo "$(RED)$(BOLD)Made [fclean] in libft  & minilibx$(END)"
+	@echo "$(RED)$(BOLD)Made [fclean] in libft $(END)"
 	@rm -rf $(NAME)
 	@echo "$(RED)$(BOLD)Removed $(NAME) $(END)"
 

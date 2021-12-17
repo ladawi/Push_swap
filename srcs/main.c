@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:47:39 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/17 22:33:58 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/17 22:53:31 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 void	print_list(t_data *data)
 {
+	int	i;
+
+	i = -1;
 	printf("---\n");
-	int i = -1;
 	while (++i < data->lenght_list_a)
 		printf("[%d]\n", data->list_a[i]);
 	i = -1;
@@ -27,7 +29,9 @@ void	print_list(t_data *data)
 
 void	print_simu(t_data *data)
 {
-	int x = -1;
+	int	x;
+
+	x = -1;
 	printf("\033[0;92m\n");
 	while (++x < data->lenght_list_simu_b)
 		printf("(%d)", data->list_simu_b[x]);
@@ -48,9 +52,9 @@ void	ft_free(t_data *data)
 	free(data->nb_order);
 }
 
-int			main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	t_data		data;
+	t_data	data;
 
 	data.count = 0;
 	data.index_max = 0;
@@ -58,7 +62,7 @@ int			main(int ac, char **av)
 	if (check(ac, av))
 	{
 		ft_putendl_fd("Error 1", 0);
-		return(-1);
+		return (-1);
 	}
 	if (get_list(ac - 1, av, &data) != 0)
 	{
@@ -68,12 +72,10 @@ int			main(int ac, char **av)
 	if (check_double(&data, 0))
 	{
 		ft_putendl_fd("Error 3", 0);
-		return(-1);
+		return (-1);
 	}
 	get_midiane(&data);
 	sort_pars(&data, ac);
 	ft_free(&data);
-	// printf("MEDIANE = %d\n", data.mediane);
-	// printf("### %d ###\n", data.count);
-	return 0;
+	return (0);
 }

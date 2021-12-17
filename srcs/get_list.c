@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 11:04:26 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/17 22:30:56 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/17 22:52:59 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	get_list(int ac, char **av, t_data *data)
 	while (++i < ac)
 	{
 		nb = ft_atoi(av[i + 1]);
-		if ((is_int(data, nb)))
+		if ((is_int(nb)))
 			return (-1);
 		data->list_a[i] = nb;
 	}
@@ -40,7 +40,7 @@ int	get_list(int ac, char **av, t_data *data)
 	return (0);
 }
 
-void	sort_medianne(t_data *data, int	*tab, int len)
+void	sort_medianne(int	*tab, int len)
 {
 	int	i;
 	int	buff;
@@ -71,7 +71,7 @@ int	get_midiane(t_data *data)
 		return (-1);
 	while (++i < data->lenght_list_a)
 		tab[i] = data->list_a[i];
-	sort_medianne(data, tab, data->lenght_list_a - 1);
+	sort_medianne(tab, data->lenght_list_a - 1);
 	i = 0;
 	while (i < (int)(data->lenght_list_a / 2))
 		i++;
@@ -95,7 +95,7 @@ int	get_midiane_n(t_data *data, int start, int end)
 	i = -1;
 	while (++i + start < end)
 		tab[i] = data->list_a[i + start];
-	sort_medianne(data, tab, len - 1);
+	sort_medianne(tab, len - 1);
 	i = 0;
 	while (i < (int)(len / 2))
 		i++;

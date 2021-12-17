@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 15:21:05 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/17 22:20:49 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/17 22:55:25 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,6 @@ void	mini_sort(t_data *data)
 
 void	small_sort(t_data *data, int ac)
 {
-	int	pos_min;
-	int	pos_max;
-	int	max;
-	int	min;
-
-	pos_min = find_min_a(data);
-	pos_max = find_max_a(data);
-	max = data->list_a[pos_max];
-	min = data->list_a[pos_min];
 	exec_stack(data, "pb");
 	if (ac == 6)
 		exec_stack(data, "pb");

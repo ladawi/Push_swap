@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 14:59:04 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/17 22:21:23 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/17 22:54:36 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	rev_rotate_a(t_data *data)
 {
 	int		nb;
-	int		x;
 	int		i;
 
 	i = data->lenght_list_a - 1;
@@ -35,7 +34,6 @@ int	rev_rotate_a(t_data *data)
 int	rev_rotate_b(t_data *data)
 {
 	int		nb;
-	int		x;
 	int		i;
 
 	i = data->lenght_list_b - 1;

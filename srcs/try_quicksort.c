@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 16:07:20 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/17 22:12:29 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/17 22:56:19 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,8 @@ int	partition(t_data *data, int start, int end, int *tab)
 	int		p;
 	int		j;
 	int		i;
-	int		tmp;
 	int		mid;
 
-	tmp = 0;
 	i = 0;
 	j = 0;
 	mid = (int)((start + end) / 2);
@@ -83,7 +81,6 @@ int	partition(t_data *data, int start, int end, int *tab)
 
 void	try_quicksort(t_data *data, int start, int end, int depth)
 {
-	int	i;
 	int	pivot;
 
 	depth++;

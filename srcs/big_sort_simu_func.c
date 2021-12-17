@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 22:37:11 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/17 22:40:09 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/17 22:56:31 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ void	rem_nb_from_simu(t_data *data, int nb)
 
 void	add_nb_in_simu_a(t_data *data, int nb)
 {
-	int	pos_nb;
-
 	while (data->list_simu_a[0] < nb
 		|| data->list_simu_a[data->lenght_list_simu_a - 1] > nb)
 		rotate_tab(data->list_simu_a, data->lenght_list_simu_a);

@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:45:17 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/17 22:38:01 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/17 22:52:17 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
 typedef struct	s_data
 {
 	int		*list_a;
-	size_t	lenght_list_a;
+	int		lenght_list_a;
 	int		*list_b;
-	size_t	lenght_list_b;
+	int		lenght_list_b;
 	int		*list_simu_b;
-	size_t	lenght_list_simu_b;
+	int		lenght_list_simu_b;
 	int		*list_simu_a;
-	size_t	lenght_list_simu_a;
+	int		lenght_list_simu_a;
 	int		count;
 	size_t	index_max;
 	int		mediane;
@@ -53,7 +53,7 @@ void		rem_nb_from_simu(t_data *data, int nb);
 void		add_nb_in_simu_a(t_data *data, int nb);
 
 void		print_simu(t_data *data);
-void		sort_medianne(t_data *data, int	*tab, int len);
+void		sort_medianne(int	*tab, int len);
 void		try_sort(t_data *data);
 int			set_nb_to_first_a(t_data *data, int nb, int pos_nb, int median);
 int			set_nb_to_first_b(t_data *data, int nb, int pos_nb, int median);
@@ -82,7 +82,7 @@ int			rev_rotate_a(t_data *data);
 int			rev_rotate_b(t_data *data);
 void		exec_stack(t_data *data, char *str);
 void		sort_pars(t_data *data, int ac);
-int			is_int(t_data *data, long int nb);
+int			is_int(long int nb);
 // void		insertion_sort(t_data *data);
 // void		selec_sort(t_data *data);
 // void		try_quicksort(t_data *data, int start, int end, int depth);

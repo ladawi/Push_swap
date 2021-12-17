@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 13:48:37 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/17 22:41:35 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/17 22:53:42 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ int	check_double(t_data *data, int index)
 	int		i;
 	int		nb;
 
-	if (index > data->lenght_list_a - 1)
+	if (index > (int)data->lenght_list_a - 1)
 		return (0);
 	nb = data->list_a[index];
 	i = 0;
-	while (i < data->lenght_list_a)
+	while (i < (int)data->lenght_list_a)
 	{
 		if (nb == data->list_a[i] && i != index)
 			return (-1);
@@ -54,11 +54,8 @@ int	check_double(t_data *data, int index)
 	return (check_double(data, index + 1));
 }
 
-int	is_int(t_data *data, long int nb)
+int	is_int(long int nb)
 {
-	int		i;
-
-	i = 0;
 	if (nb > 2147483647 || nb < -2147483647)
 		return (-1);
 	return (0);

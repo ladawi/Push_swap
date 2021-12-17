@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 14:10:00 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/17 22:21:36 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/17 22:54:21 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 int	push_a(t_data *data)
 {
-	int		nb;
-	int		i;
-
-	i = 0;
 	if (data->lenght_list_b > 0)
 	{
 		data->list_a[data->lenght_list_a] = data->list_b[0];
@@ -31,10 +27,6 @@ int	push_a(t_data *data)
 
 int	push_b(t_data *data)
 {
-	int		nb;
-	int		i;
-
-	i = 0;
 	if (data->lenght_list_a > 0)
 	{
 		data->list_b[data->lenght_list_b] = data->list_a[0];
