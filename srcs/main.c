@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:47:39 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/17 18:12:19 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/17 22:33:58 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,29 @@ void	print_list(t_data *data)
 	while (++i < data->lenght_list_b)
 		printf("{%d}\n", data->list_b[i]);
 	printf("---\n");
+}
+
+void	print_simu(t_data *data)
+{
+	int x = -1;
+	printf("\033[0;92m\n");
+	while (++x < data->lenght_list_simu_b)
+		printf("(%d)", data->list_simu_b[x]);
+	printf("\n");
+	x = -1;
+	printf("\033[0;95m\n");
+	while (++x < data->lenght_list_simu_a)
+		printf("(%d)", data->list_simu_a[x]);
+	printf("\033[0m\n");
+}
+
+void	ft_free(t_data *data)
+{
+	free(data->list_a);
+	free(data->list_b);
+	free(data->list_simu_a);
+	free(data->list_simu_b);
+	free(data->nb_order);
 }
 
 int			main(int ac, char **av)
@@ -48,18 +71,9 @@ int			main(int ac, char **av)
 		return(-1);
 	}
 	get_midiane(&data);
-	// printf("data.lenght_list_a = %ld\n", data.lenght_list_a);
-	// printf("__ AC = %d __\n", ac);
 	sort_pars(&data, ac);
-	// print_list(&data);
+	ft_free(&data);
 	// printf("MEDIANE = %d\n", data.mediane);
 	// printf("### %d ###\n", data.count);
-	// int i = -1;
-	// while (++i < data.lenght_list_a)
-	// 	printf("[%d]\n", data.list_a[i]);
-	// i = -1;
-	// while (++i < data.lenght_list_b)
-	// 	printf("{%d}\n", data.list_b[i]);
-	// printf("[lenght a = %ld][lenght b = %ld]\n", data.lenght_list_a, data.lenght_list_b);
 	return 0;
 }

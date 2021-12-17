@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 15:21:05 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/17 22:08:28 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/17 22:20:49 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,37 +35,6 @@ void	mini_sort(t_data *data)
 	}
 	else if (pos_max == 1 && pos_min == 2)
 		exec_stack(data, "rra");
-}
-
-void	set_pos_list(t_data *data)
-{
-	int	pos_min;
-
-	pos_min = find_min_a(data);
-	while (find_min_a(data) != 0)
-	{
-		if (pos_min < (int)(data->lenght_list_a / 2))
-			exec_stack(data, "ra");
-		else
-			exec_stack(data, "rra");
-	}
-}
-
-void	place_listb_nb(t_data *data)
-{
-	if (data->list_b[0] < data->list_a[find_min_a(data)]
-		|| data->list_b[0] > data->list_a[find_max_a(data)])
-	{
-		set_pos_list(data);
-		exec_stack(data, "pa");
-	}
-	else
-	{
-		while (data->list_a[data->lenght_list_a - 1] > data->list_b[0]
-			|| data->list_a[0] < data->list_b[0])
-			exec_stack(data, "ra");
-		exec_stack(data, "pa");
-	}
 }
 
 void	small_sort(t_data *data, int ac)

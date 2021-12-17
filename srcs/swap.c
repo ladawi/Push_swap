@@ -6,13 +6,13 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 13:00:42 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/08 15:44:10 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/17 22:20:11 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
 
-int		swap_a(t_data *data)
+int	swap_a(t_data *data)
 {
 	int		n;
 
@@ -25,7 +25,7 @@ int		swap_a(t_data *data)
 	return (0);
 }
 
-int		swap_b(t_data *data)
+int	swap_b(t_data *data)
 {
 	int		n;
 
@@ -38,7 +38,7 @@ int		swap_b(t_data *data)
 	return (0);
 }
 
-int		swap_ss(t_data *data)
+int	swap_ss(t_data *data)
 {
 	swap_a(data);
 	swap_b(data);

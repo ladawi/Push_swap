@@ -6,13 +6,13 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 14:59:04 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/08 15:12:18 by ladawi           ###   ########.fr       */
+/*   Updated: 2021/12/17 22:21:23 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
 
-int			rev_rotate_a(t_data *data)
+int	rev_rotate_a(t_data *data)
 {
 	int		nb;
 	int		x;
@@ -32,7 +32,7 @@ int			rev_rotate_a(t_data *data)
 	return (0);
 }
 
-int			rev_rotate_b(t_data *data)
+int	rev_rotate_b(t_data *data)
 {
 	int		nb;
 	int		x;
@@ -52,7 +52,7 @@ int			rev_rotate_b(t_data *data)
 	return (0);
 }
 
-int			rev_rotate_rr(t_data *data)
+int	rev_rotate_rr(t_data *data)
 {
 	rev_rotate_a(data);
 	rev_rotate_b(data);
