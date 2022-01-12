@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 15:21:05 by ladawi            #+#    #+#             */
-/*   Updated: 2022/01/12 15:39:07 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/12 15:46:36 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	small_sort(t_data *data, int ac)
 
 void	sort_pars(t_data *data, int ac)
 {
-	if (ac <= 3)
+	if (ac == 3)
 	{
 		nano_sort(data);
 	}
