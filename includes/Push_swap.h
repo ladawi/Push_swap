@@ -6,18 +6,18 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:45:17 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/17 22:52:17 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/12 15:32:03 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include "../libft/includes/libft.h"
 # include "../libft/includes/get_next_line.h"
 # include <stdio.h>
 
-typedef struct	s_data
+typedef struct s_data
 {
 	int		*list_a;
 	int		lenght_list_a;
@@ -83,9 +83,5 @@ int			rev_rotate_b(t_data *data);
 void		exec_stack(t_data *data, char *str);
 void		sort_pars(t_data *data, int ac);
 int			is_int(long int nb);
-// void		insertion_sort(t_data *data);
-// void		selec_sort(t_data *data);
-// void		try_quicksort(t_data *data, int start, int end, int depth);
-
 
 #endif

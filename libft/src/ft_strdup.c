@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 14:56:57 by ladawi            #+#    #+#             */
-/*   Updated: 2020/01/25 16:23:51 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/11 15:53:01 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ char	*ft_strdup(const char *s1)
 	int		i;
 
 	i = 0;
-	if (!(str = (char*)malloc(sizeof(char) * (ft_strlen(s1) + 1))))
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
+	if (!(str))
 		return (0);
 	while (s1[i])
 	{

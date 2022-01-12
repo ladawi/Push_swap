@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 14:09:26 by ladawi            #+#    #+#             */
-/*   Updated: 2020/01/25 16:23:37 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/11 16:20:25 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (i >= 0)
 	{
 		if (s[i] == (char)c)
-			return (&((char*)s)[i]);
+			return (&((char *)s)[i]);
 		i--;
 	}
 	return (NULL);

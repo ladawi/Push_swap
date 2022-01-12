@@ -6,13 +6,13 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 12:47:17 by ladawi            #+#    #+#             */
-/*   Updated: 2020/01/25 16:24:11 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/11 15:05:35 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-static	int		ft_count_length(unsigned long int n)
+static	int	ft_count_length(unsigned long int n)
 {
 	int		length;
 
@@ -27,7 +27,7 @@ static	int		ft_count_length(unsigned long int n)
 
 static	void	ft_fill_number(char *number, long int n, int nb_length)
 {
-	unsigned long int num;
+	unsigned long int	num;
 
 	if (n < 0)
 	{
@@ -46,7 +46,7 @@ static	void	ft_fill_number(char *number, long int n, int nb_length)
 	}
 }
 
-char			*ft_itoa(long int n)
+char	*ft_itoa(long int n)
 {
 	char	*number;
 	int		nb_length;
@@ -55,7 +55,8 @@ char			*ft_itoa(long int n)
 		nb_length = 1 + ft_count_length(-n);
 	else
 		nb_length = ft_count_length(n);
-	if (!(number = (char*)malloc(sizeof(char) * (nb_length + 1))))
+	number = (char *)malloc(sizeof(char) * (nb_length + 1));
+	if (!(number))
 		return (0);
 	ft_fill_number(number, n, nb_length);
 	number[nb_length] = '\0';

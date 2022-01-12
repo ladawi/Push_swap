@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 13:10:22 by ladawi            #+#    #+#             */
-/*   Updated: 2020/01/25 16:24:02 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/11 15:07:24 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*tmp;
 
-	if (!(tmp = (t_list *)malloc(sizeof(t_list))))
+	tmp = (t_list *)malloc(sizeof(t_list));
+	if (!(tnp))
 		return (0);
 	tmp->content = content;
 	tmp->next = NULL;

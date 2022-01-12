@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 17:22:09 by ladawi            #+#    #+#             */
-/*   Updated: 2021/05/24 10:58:51 by ladawi           ###   ########.fr       */
+/*   Updated: 2020/01/24 15:41:36 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,6 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
-# endif
-
-# ifndef OPEN_MAX
-#  define OPEN_MAX 1096
 # endif
 
 int		get_next_line(int fd, char **line);

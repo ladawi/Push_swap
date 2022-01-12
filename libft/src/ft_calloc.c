@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 14:15:40 by ladawi            #+#    #+#             */
-/*   Updated: 2020/01/25 16:24:15 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/11 14:39:41 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ void	*ft_calloc(size_t count, size_t size)
 	int			len;
 
 	len = count * size;
-	len ? len : len++;
-	if (!(ptr = (void*)malloc(len)))
+	if (!(len))
+		len++;
+	ptr = (void *)malloc(len);
+	if (!(ptr))
 		return (0);
 	ft_bzero(ptr, len);
 	return (ptr);

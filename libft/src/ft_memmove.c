@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 11:03:26 by ladawi            #+#    #+#             */
-/*   Updated: 2021/05/24 10:57:43 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/11 15:09:20 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	if ((size_t)dst - (size_t)src <= n)
 	{
 		i = n - 1;
-		while (i < n)
+		while (i >= 0 && i < n)
 		{
-			((unsigned char*)dst)[i] = ((unsigned char*)src)[i];
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 			i--;
 		}
 	}
@@ -32,7 +32,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		i = 0;
 		while (i < n)
 		{
-			((unsigned char*)dst)[i] = ((unsigned char*)src)[i];
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 			i++;
 		}
 	}

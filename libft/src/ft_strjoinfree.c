@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 15:47:16 by ladawi            #+#    #+#             */
-/*   Updated: 2020/01/25 16:23:49 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/11 15:53:47 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ char	*ft_strjoinfree(char const *s1, char *s2, int nb)
 	to_free2 = (char *)s2;
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
-	if (!(str = (char*)malloc(len_s1 + len_s2 + 1)))
+	str = (char *)malloc(len_s1 + len_s2 + 1);
+	if (!(str))
 		return (0);
 	ft_memcpy(str, s1, len_s1);
 	ft_memcpy(str + ft_strlen(s1), s2, len_s2 + 1);

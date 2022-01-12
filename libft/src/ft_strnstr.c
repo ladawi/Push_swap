@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 11:36:28 by ladawi            #+#    #+#             */
-/*   Updated: 2020/01/25 16:23:38 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/11 16:19:25 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 
 	i = 0;
 	if (!*s2)
-		return ((char*)s1);
+		return ((char *)s1);
 	while (s1[i] && i < len)
 	{
 		j = 0;
@@ -28,7 +28,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 			j++;
 			if (s2[j] == '\0')
 			{
-				return ((char*)&s1[i]);
+				return ((char *)&s1[i]);
 			}
 		}
 		i++;

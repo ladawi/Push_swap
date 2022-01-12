@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 10:08:43 by ladawi            #+#    #+#             */
-/*   Updated: 2020/01/25 16:23:45 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/11 15:55:37 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ char	*ft_strndup(const char *s, size_t n)
 	char	*ptr;
 
 	slen = ft_strlen(s) + 1;
-	if (!(ptr = malloc(n + 1)))
+	ptr = malloc(n + 1);
+	if (!(ptr))
 		return (NULL);
 	ptr[n + 1] = 0;
 	ft_memcpy(ptr, s, n);

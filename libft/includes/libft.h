@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 13:37:57 by ladawi            #+#    #+#             */
-/*   Updated: 2021/05/26 08:41:30 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/11 16:38:14 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char			*ft_strnstr(const char *s1, const char *s2, size_t len);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t			ft_strlcpy(char *dest, const char *src, size_t size);
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
-long int				ft_atoi(const char *nptr);
+int				ft_atoi(const char *nptr);
 void			*ft_calloc(size_t nmemb, size_t size);
 char			*ft_strdup(const char *s);
 char			*ft_strjoin(char const *s1, char *s2);
@@ -57,7 +57,7 @@ int				ft_intlen(long int nb);
 int				ft_intlenbase(long int nb, int base);
 char			*ft_strjoinfree(char const *s1, char *s2, int nb);
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -72,6 +72,6 @@ void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void
-(*del)(void *));
+					(*del)(void *));
 
 #endif

@@ -6,11 +6,19 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 15:21:05 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/17 22:55:25 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/12 15:39:07 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Push_swap.h"
+
+void	nano_sort(t_data *data)
+{
+	if (data->list_a[0] > data->list_a[1])
+	{
+		exec_stack(data, "sa");
+	}
+}
 
 void	mini_sort(t_data *data)
 {
@@ -50,7 +58,11 @@ void	small_sort(t_data *data, int ac)
 
 void	sort_pars(t_data *data, int ac)
 {
-	if (ac <= 4)
+	if (ac <= 3)
+	{
+		nano_sort(data);
+	}
+	else if (ac <= 4)
 	{
 		mini_sort(data);
 	}

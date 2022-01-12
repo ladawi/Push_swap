@@ -6,13 +6,13 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 17:01:28 by nieyraud          #+#    #+#             */
-/*   Updated: 2020/01/19 12:08:54 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/11 16:23:02 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static	int		ft_count_length(unsigned long int n)
+static	int	ft_count_length(unsigned long int n)
 {
 	int		length;
 
@@ -27,7 +27,7 @@ static	int		ft_count_length(unsigned long int n)
 
 static	void	ft_fill_number(char *number, unsigned long int n, int nb_length)
 {
-	char *base;
+	char	*base;
 
 	base = "0123456789abcdef";
 	while (--nb_length >= 0)
@@ -37,13 +37,14 @@ static	void	ft_fill_number(char *number, unsigned long int n, int nb_length)
 	}
 }
 
-char			*ft_ultoax(unsigned long int n)
+char	*ft_ultoax(unsigned long int n)
 {
 	char	*number;
 	int		nb_length;
 
 	nb_length = ft_count_length(n);
-	if (!(number = (char*)malloc(sizeof(char) * (nb_length + 1))))
+	number = (char *)malloc(sizeof(char) * (nb_length + 1));
+	if (!(number))
 		return (0);
 	ft_fill_number(number, n, nb_length);
 	number[nb_length] = '\0';

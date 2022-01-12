@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:29:23 by ladawi            #+#    #+#             */
-/*   Updated: 2019/11/18 14:32:08 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/11 15:09:29 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		*(unsigned char*)(s + i) = (unsigned char)c;
+		*(unsigned char *)(s + i) = (unsigned char)c;
 		i++;
 	}
 	return (s);
