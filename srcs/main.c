@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:47:39 by ladawi            #+#    #+#             */
-/*   Updated: 2021/12/17 22:53:31 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/12 15:47:32 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,17 @@ int	main(int ac, char **av)
 	data.mediane = 0;
 	if (check(ac, av))
 	{
-		ft_putendl_fd("Error 1", 0);
+		ft_putendl_fd("Error", 0);
 		return (-1);
 	}
 	if (get_list(ac - 1, av, &data) != 0)
 	{
-		ft_putendl_fd("Error 2", 0);
+		ft_putendl_fd("Error", 0);
 		return (-1);
 	}
 	if (check_double(&data, 0))
 	{
-		ft_putendl_fd("Error 3", 0);
+		ft_putendl_fd("Error", 0);
 		return (-1);
 	}
 	get_midiane(&data);
