@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:47:39 by ladawi            #+#    #+#             */
-/*   Updated: 2022/01/12 15:47:32 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/16 15:51:39 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,21 @@ void	ft_free(t_data *data)
 	free(data->nb_order);
 }
 
+int	list_is_sorted(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	while (i < data->lenght_list_a - 1)
+	{
+		if (data->list_a[i] < data->list_a[i + 1])
+			i++;
+		else
+			return (1);
+	}
+	return (0);
+}
+
 int	main(int ac, char **av)
 {
 	t_data	data;
@@ -64,18 +79,17 @@ int	main(int ac, char **av)
 		ft_putendl_fd("Error", 0);
 		return (-1);
 	}
-	if (get_list(ac - 1, av, &data) != 0)
+	if ((get_list(ac - 1, av, &data) != 0) || (check_double(&data, 0)) != 0)
 	{
 		ft_putendl_fd("Error", 0);
+		ft_free(&data);
 		return (-1);
 	}
-	if (check_double(&data, 0))
+	if (ac > 1 && list_is_sorted(&data) == 1)
 	{
-		ft_putendl_fd("Error", 0);
-		return (-1);
+		get_midiane(&data);
+		sort_pars(&data, ac);
 	}
-	get_midiane(&data);
-	sort_pars(&data, ac);
 	ft_free(&data);
 	return (0);
 }

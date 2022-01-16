@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:45:17 by ladawi            #+#    #+#             */
-/*   Updated: 2022/01/12 15:32:03 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/16 15:59:19 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void		small_sort(t_data *data, int ac);
 void		mini_sort(t_data *data);
 
 void		big_sort(t_data *data);
+int			next_insert(t_data *data, int *tab, int len_tab);
 void		rotate_tab(int *tab, int len);
 int			get_nb_move_tostart(int *tab, int len_tab, int nb);
 int			get_nb_move_insert(int *tab, int len_tab, int nb);

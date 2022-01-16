@@ -6,7 +6,7 @@
 /*   By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/27 14:05:00 by ladawi            #+#    #+#             */
-/*   Updated: 2022/01/11 16:35:58 by ladawi           ###   ########.fr       */
+/*   Updated: 2022/01/16 13:44:45 by ladawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,10 @@ int	stock_rest(int fd, char **rest, char **line)
 
 int	get_next_line(int fd, char **line)
 {
-	static char	*rest[OPEN_MAX];
+	static char	*rest[FOPEN_MAX];
 	int			error;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > OPEN_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > FOPEN_MAX)
 		return (-1);
 	error = stock_rest(fd, &rest[fd], line);
 	if (rest[fd] && (error == -1 || error == 0))

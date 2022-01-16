@@ -6,7 +6,7 @@
 #    By: ladawi <ladawi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/24 10:40:04 by ladawi            #+#    #+#              #
-#    Updated: 2021/12/17 22:55:33 by ladawi           ###   ########.fr        #
+#    Updated: 2022/01/16 13:44:13 by ladawi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,8 +46,8 @@ SRC_DIR = srcs
 
 OBJ_DIR = objs
 
-FLAGS = -Wall -Werror -Wextra
-# FLAGS = -g3 -fsanitize=address
+# FLAGS = -Wall -Werror -Wextra
+FLAGS = -g3 -fsanitize=address
 
 END = \033[0m
 RED = \033[0;91m
